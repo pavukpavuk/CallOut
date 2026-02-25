@@ -1,0 +1,50 @@
+#header{
+    position: relative;
+    display: flex;
+    color:white;
+    height: 150px;
+    border-bottom: 2px solid red;
+    width: 100%;
+    background-image: url("../assets/background.png");
+}
+
+#logo{
+    max-height: 150px;
+}
+
+#navbar{
+    position: relative;
+    width: 100%;
+    height: 48px;
+    bottom: 0px;
+    margin-top: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    #navbar{
+        display: none;
+    } 
+}
+
+.flex-link-container{
+    display: flex;
+    text-align: center;
+    position: absolute;
+
+    bottom: 0;
+    right:0;
+    width: 100%;
+
+}
+
+.flex-link-container > a{
+
+    right:0;
+    flex:1;
+    text-decoration: none;
+    color:white;
+    padding: 12px;
+}
+a:hover{
+    color:red;
+}

@@ -1,0 +1,54 @@
+#body{
+    color:white;
+    background-color: #000000;
+    min-height: 2000px;
+    height: 100vh;
+    background: #000000;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgb(34, 34, 34) 50%, rgba(0, 0, 0, 1) 100%);
+    
+}
+#page-content{
+    display: flex;
+}
+
+
+
+#safe-zone{
+   
+    flex: 1;
+    margin: 0 auto;
+    min-width: 915px;
+    max-width: 1024px;
+  
+    min-height: 1800px;
+    /* height: 100%; */
+    width: 100%;
+  
+}
+
+@media only screen and (max-width: 600px) {
+    #safe-zone{
+        min-width: 320px;
+    } 
+}
+
+
+#left-side-content{
+    flex: 1;
+  
+    height: 100%;
+    min-height: 1800px;
+    min-width: 0;
+    
+}
+#right-side-content{
+    flex: 1;
+    
+    height: 100%;
+    min-height: 1800px;
+     min-width: 0;
+    
+}
+
+
+
