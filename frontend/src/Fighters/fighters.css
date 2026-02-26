@@ -1,0 +1,73 @@
+:root{
+    --fighter-card-height:216px;
+    --headshot-width: 150px;
+}
+
+.fighter-container{
+    position: relative;
+    display: flex;
+    
+    padding: 16px;
+    max-width:100%;
+    min-height: var(--fighter-card-height);
+    background-color: black;
+    border: 3px white solid;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    
+    background-image: url("../assets/background.png");
+}
+
+.fighter-headshot-container > img{
+    
+    object-fit: cover;
+    border-radius: 30px;
+
+    height: 100%;
+    min-width: var(--headshot-width);
+}
+
+.fighter-headshot-container{
+    /* margin: 12px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    max-height:100%;
+}
+
+
+.fighter-rank > img{
+    height:100%;
+}
+
+
+.fighter-callout-button {
+    background-color: black;
+    margin-top: auto;
+
+    height: 50px;
+    min-width: 100%;
+
+    font-family: philly_sans;
+    font-size: xx-large; 
+    color:white;
+
+}
+
+.callout-button-logo{
+    width:110px;
+}
+
+
+.fighter-text-container{
+    flex:2;
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.fighter-text-container > h1{
+    margin: 0;
+    text-align: left;
+}
+

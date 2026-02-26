@@ -1,8 +1,8 @@
 #body{
     color:white;
     background-color: #000000;
-    min-height: 2000px;
-    height: 100vh;
+    min-height: 500px;
+    height: 100%;
     background: #000000;
     background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgb(34, 34, 34) 50%, rgba(0, 0, 0, 1) 100%);
     
@@ -20,7 +20,7 @@
     min-width: 915px;
     max-width: 1024px;
   
-    min-height: 1800px;
+    min-height: 500px;
     /* height: 100%; */
     width: 100%;
   

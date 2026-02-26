@@ -7,6 +7,10 @@
   font-family: krona_one;
   src: url('assets/fonts/krona_one/KronaOne-Regular.ttf');
 }
+@font-face {
+  font-family: philly_sans;
+  src: url('assets/fonts/philly_sans/PhillySans.otf');
+}
 
 :root {
   /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
