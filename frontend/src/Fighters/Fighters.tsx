@@ -66,7 +66,8 @@ function Fighter({fighter}: FighterProps){
             <h1> {fighter.name}       </h1> 
             <p>  {fighter.description}</p> 
             
-            <button className="fighter-callout-button">
+            
+            <button className="fighter-callout-button">  
                 <img className="callout-button-logo" src={logo}/>
             </button>
            

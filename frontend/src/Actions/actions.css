@@ -1,0 +1,23 @@
+.actions-title{
+    width: 100%;
+   
+    
+    
+    display: block;
+    text-align: center;
+    font-size: small;
+    font-family: krona_one;
+}
+.actions-title > h1{
+    margin: 0;
+    
+}
+
+.actions-main{
+    background-color: black;
+    min-height: 500px;
+    height: 100%;
+    box-shadow: 2px 2px 8px rgb(70, 70, 70);
+    border-bottom-right-radius: 32px;
+    /* border-top-right-radius: 32px; */
+}
