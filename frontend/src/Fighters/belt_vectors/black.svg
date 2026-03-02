@@ -1,34 +1,12 @@
-<svg width="43" height="210" viewBox="0 0 43 210" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_dd_27_1220)">
+<svg width="27" height="210" viewBox="0 0 27 210" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="path-1-inside-1_27_1220" fill="white">
-<path d="M8 -2H35V208H8V-2Z"/>
+<path d="M0 0H27V210H0V0Z"/>
 </mask>
-<path d="M8 -2H35V208H8V-2Z" fill="black"/>
-<path d="M35 -2H33V208H35H37V-2H35ZM8 208H9V-2H8H7V208H8Z" fill="black" mask="url(#path-1-inside-1_27_1220)"/>
-</g>
+<path d="M0 0H27V210H0V0Z" fill="black"/>
+<path d="M27 0H25V210H27H29V0H27ZM0 210H1V0H0H-1V210H0Z" fill="black" mask="url(#path-1-inside-1_27_1220)"/>
 <mask id="path-3-inside-2_27_1220" fill="white">
-<path d="M8 138H35V185H8V138Z"/>
+<path d="M0 139H27V186H0V139Z"/>
 </mask>
-<path d="M8 138H35V185H8V138Z" fill="#FF0000"/>
-<path d="M8 138V141H35V138V135H8V138ZM35 185V182H8V185V188H35V185Z" fill="white" mask="url(#path-3-inside-2_27_1220)"/>
-<defs>
-<filter id="filter0_dd_27_1220" x="0" y="-8" width="43" height="222" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feMorphology radius="2" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_27_1220"/>
-<feOffset dx="-2"/>
-<feGaussianBlur stdDeviation="2"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_27_1220"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feMorphology radius="2" operator="dilate" in="SourceAlpha" result="effect2_dropShadow_27_1220"/>
-<feOffset dx="2"/>
-<feGaussianBlur stdDeviation="2"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="effect1_dropShadow_27_1220" result="effect2_dropShadow_27_1220"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_27_1220" result="shape"/>
-</filter>
-</defs>
+<path d="M0 139H27V186H0V139Z" fill="#FF0000"/>
+<path d="M0 139V142H27V139V136H0V139ZM27 186V183H0V186V189H27V186Z" fill="white" mask="url(#path-3-inside-2_27_1220)"/>
 </svg>

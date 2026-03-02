@@ -6,7 +6,7 @@ import purple_belt_image from "./belt_vectors/purple.svg";
 import blue_belt_image from "./belt_vectors/blue.svg";
 import white_belt_image from "./belt_vectors/white.svg";
 
-import logo from "../assets/logo.png";
+import logo from "../assets/logo_no_arrow.png";
 
 import {useEffect, useState} from "react";
 import axios from "axios";
@@ -34,22 +34,22 @@ function Fighter({fighter}: FighterProps){
     
     switch(fighter.rank){
         case "black":
-            fighter_rank = <img src={black_belt_image}/>; 
+            fighter_rank = <img className="fighter-rank" src={black_belt_image}/>; 
             break;
 
         case "blue":
-            fighter_rank = <img src={blue_belt_image}/>;
+            fighter_rank = <img className="fighter-rank" src={blue_belt_image}/>;
             break; 
 
         case "purple": 
-            fighter_rank = <img src={purple_belt_image}/>;
+            fighter_rank = <img className="fighter-rank" src={purple_belt_image}/>;
             break; 
 
         case "brown":
-            fighter_rank = <img src={brown_belt_image}/>;
+            fighter_rank = <img className="fighter-rank" src={brown_belt_image}/>;
             break; 
         case "white":
-            fighter_rank = <img src={white_belt_image}/>;
+            fighter_rank = <img className="fighter-rank" src={white_belt_image}/>;
             break; 
     }
 
@@ -66,12 +66,23 @@ function Fighter({fighter}: FighterProps){
             <h1> {fighter.name}       </h1> 
             <p>  {fighter.description}</p> 
             
-                <button className="fighter-callout-button"><img className="callout-button-logo" src={logo}/></button>
+            <button className="fighter-callout-button">
+                <img className="callout-button-logo" src={logo}/>
+            </button>
            
         </div>
-        <div>{fighter.wins}       </div> 
-        <div>{fighter.losses}     </div>  
-        <div>{fighter.draws}      </div> 
+
+        <div className="record-titles-container">
+            <div>W:</div>
+            <div>L:</div>
+            <div>D:</div>
+        </div>
+
+        <div className="record-container">
+            <div className="record-w">{fighter.wins}       </div> 
+            <div className="record-l" >{fighter.losses}     </div>  
+            <div className="record-d" >{fighter.draws}      </div> 
+        </div>
     </div>
 }
 
@@ -103,6 +114,21 @@ export function Fighters(){
     }, []);
 
 
+    var searchForm = <>
+
+        <div className="fighter-search-form">
+            <div className="text-input-container"><span>Search Fighters:</span><input type="text" name="search-fighters"/></div>
+            <br></br>
+            <div className="fighter-search-button-container">
+                <button className="fighter-search-button">Search</button>
+            </div>
+            
+        </div>
+    </>;
+
+
+
+
     var fightersHTML;
     if(fighterArrState === "received"){
             fightersHTML = fighterArr.map( (fighter, idx) =>{
@@ -116,6 +142,7 @@ export function Fighters(){
 
 
     return <>
+        {searchForm}
         {fightersHTML}
     </>
 }
