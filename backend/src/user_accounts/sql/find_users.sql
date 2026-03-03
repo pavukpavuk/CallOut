@@ -1,0 +1,1 @@
+SELECT * FROM useraccounts WHERE username LIKE $1 || '%' LIMIT 10;

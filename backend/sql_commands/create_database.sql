@@ -1,0 +1,4 @@
+CREATE DATABASE bookingsystem;
+CREATE ROLE pavuk SUPERUSER;
+ALTER DATABASE bookingsystem OWNER TO pavuk;
+ALTER ROLE pavuk WITH LOGIN;

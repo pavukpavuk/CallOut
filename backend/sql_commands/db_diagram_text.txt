@@ -1,0 +1,23 @@
+
+Table sessions {
+  id integer [primary key]
+  session_id integer
+  username string
+}
+
+Table useraccounts {
+  id integer [primary key]
+  username varchar
+  email_encrypted varchar
+  password_hash varchar
+  verified varchar
+  email_nonce varchar
+  user_key_encrypted varchar
+  key_nonce varchar
+  role varchar
+  created_at timestamp
+}
+
+
+
+Ref: useraccounts.username - sessions.username

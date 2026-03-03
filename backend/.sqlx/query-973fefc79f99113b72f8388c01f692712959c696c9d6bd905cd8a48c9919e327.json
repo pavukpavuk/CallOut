@@ -1,0 +1,19 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO useraccounts \n(username, email_encrypted, password_hash, email_nonce, user_key_encrypted, key_nonce) \nVALUES ($1, $2, $3, $4, $5, $6);",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Text",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "973fefc79f99113b72f8388c01f692712959c696c9d6bd905cd8a48c9919e327"
+}

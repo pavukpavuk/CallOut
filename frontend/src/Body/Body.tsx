@@ -6,9 +6,6 @@ import {Notifications} from "../Notifications/Notifications"
 export function Body(){
     return <>
         <div id="body">
-
-            
-
             <div id="page-content">
                 <div id="left-side-content">
                     <Actions/>
