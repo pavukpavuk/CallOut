@@ -12,21 +12,16 @@ export function Actions(){
     };
 
     return <div className={`actions-main ${open ? "open" : ""}`}>
-    
-    <div className="actions-title">
-        <h1>ACTIONS</h1> 
-        <img className={`actions-menu-arrow ${open ? "open" : ""}`} onClick={toggleOpen}src={menuArrow}/>
-    </div>
+        
+        <div className="actions-title">
+            <h1>ACTIONS</h1> 
+            <img className={`actions-menu-arrow ${open ? "open" : ""}`} onClick={toggleOpen}src={menuArrow}/>
+        </div>
+        
         <hr className={`action-button ${open ? "open" : ""}`}></hr>
 
-    <a className={`callout-button action-button ${open ? "open" : ""}`}>CALLOUT</a>
-    <a className={`action-button ${open ? "open" : ""}`}>VIEW ACTIVE CALLOUTS</a>
-    <a className={`action-button ${open ? "open" : ""}`}>RESPOND TO CALLOUTS</a>
-   
-    
-        
-    
-    
-
+        <a className={`callout-button action-button ${open ? "open" : ""}`}>CALLOUT</a>
+        <a className={`action-button ${open ? "open" : ""}`}>VIEW ACTIVE CALLOUTS</a>
+        <a className={`action-button ${open ? "open" : ""}`}>RESPOND TO CALLOUTS</a>
     </div>
 }
