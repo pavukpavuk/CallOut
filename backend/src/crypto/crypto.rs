@@ -73,7 +73,7 @@ impl Crypto{
     }
 
     
-    pub fn new_with_provided_key(key: &[u8] ) -> Result<Self,String>{
+    pub fn new_with_provided_key_hex(key: &[u8] ) -> Result<Self,String>{
         let key = hex::decode(key).map_err(|e| {
             format!("Decoding error (key): {}", e)
         })?;
@@ -95,6 +95,21 @@ impl Crypto{
 
         Self{ key, cipher }
     }
+
+    pub fn new_with_provided_key(key: &[u8] ) -> Result<Self,String>{
+
+
+        if key.len() != Aes256Gcm::key_size() {
+            return Err(format!("Key is wrong size: expected {} bytes, received {} bytes", Aes256Gcm::key_size(), key.len()));
+        }
+
+        let key = Key::<Aes256Gcm>::clone_from_slice(&key);
+        let cipher = Aes256Gcm::new(&key);
+
+        Ok(Self { key, cipher })
+    }
+
+
     
     
     pub fn encrypt(&self, input: &[u8]) -> Result<EncryptedData, String>{

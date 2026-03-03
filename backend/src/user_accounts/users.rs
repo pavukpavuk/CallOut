@@ -194,7 +194,7 @@ pub async fn create_user(app_state: State<Arc<AppState>>, Json(new_user): Json<U
     })?;
     
 
-    let crypto_with_master_key = Crypto::new_with_provided_key(&app_state.master_key.as_bytes()).map_err(|e| {
+    let crypto_with_master_key = Crypto::new_with_provided_key_hex(&app_state.master_key.as_bytes()).map_err(|e| {
         logging::log_users(format!("Failed to instantiate Crypto instance: {}", e).as_str());
         BackendError::InternalServerError("Internal server error".to_string())
     })?;
@@ -352,20 +352,34 @@ fn decrypt_user_data(app_state: State<Arc<AppState>>, user : &mut User) -> Resul
     let generic_error = BackendError::InternalServerError("Internal Server Error".to_string());
 
     //use master key to decrypt user key
-    let crypto_master_key = Crypto::new_with_provided_key(&app_state.master_key.as_bytes())
-        .map_err(|_|  generic_error.clone())?;
+    let crypto_master_key = Crypto::new_with_provided_key_hex(&app_state.master_key.as_bytes())
+        .map_err(|_|  {
+                println!("failed to create master key");
+                generic_error.clone()
+            })?;
 
     let decrypted_user_key = crypto_master_key
         .decrypt(&user.user_key, &user.user_key_nonce)
-        .map_err(|_|  generic_error.clone())?;
+        .map_err(|_|   {
+            println!("failed to decrypt user key");
+            generic_error.clone()
+        })?;
 
     let crypto_user_key = Crypto::new_with_provided_key(&decrypted_user_key.as_bytes())
-        .map_err(|_|  generic_error.clone())?;
+        .map_err(|_|  {
+            println!("failed to instantiate user key crypto");
+            generic_error.clone()
+        })?;
 
     //more to come i assume
     user.email = crypto_user_key
         .decrypt(&user.email, &user.email_nonce)
-        .map_err(|_|  generic_error.clone())?
+        .map_err(|_|  {
+
+        
+            println!("failed to decrypt user email");
+            generic_error.clone()
+        })?
         .as_bytes();
 
     Ok(user)

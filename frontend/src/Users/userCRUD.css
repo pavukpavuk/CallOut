@@ -1,0 +1,72 @@
+.create-user{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    
+    
+    width: 48%;
+    min-width: 300px;
+    max-width: 600px;
+    margin-bottom: 24px;
+
+    display: fl;
+}
+.input-module{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    
+    
+    width: 48%;
+    min-width: 300px;
+    max-width: 600px;
+    margin-bottom: 24px;
+
+    display: fl;
+    
+}
+
+.input-module > h1{
+    text-align: center;
+}
+
+
+.find-all-users{
+    width: 48%;
+    min-width: 300px;
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+.label-and-input-container{
+    display: flex;
+}
+.label-and-input-container > label{
+    width: 30%;
+    min-width: 30%;
+}
+.input-box
+{
+    flex:2;
+    margin-bottom: 4px;
+}
+.bordered{
+    border: 1px white solid;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.centered-button{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 100%;
+  background: linear-gradient(red, black);
+  border: 0;
+  border-radius: 20px;
+}
+
+.centered-button:hover{
+    background: linear-gradient(cyan, black);
+    cursor: pointer;
+}

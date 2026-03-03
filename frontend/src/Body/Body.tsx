@@ -2,6 +2,7 @@ import "./Body.css";
 import {Fighters} from "../Fighters/Fighters"
 import {Actions} from "../Actions/Actions"
 import {Notifications} from "../Notifications/Notifications"
+import {UserCRUD} from "../Users/UserCRUD";
 
 export function Body(){
     return <>
@@ -12,6 +13,7 @@ export function Body(){
                 </div>
                 <div id="safe-zone">
                     <Fighters/>
+                    <UserCRUD/>
                 </div>
                 <div id="right-side-content">
                     <Notifications/>

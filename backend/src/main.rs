@@ -60,9 +60,7 @@ async fn main() {
     .unwrap();
 
     let allowed_origins = [ //machines allowed to access the resources and make requests
-        HeaderValue::from_static("https://localhost:3000"),
-        HeaderValue::from_static("https://10.76.1.162:3000"),
-        HeaderValue::from_static("https://10.76.1.162:3629"),
+        HeaderValue::from_static("http://localhost:5173"),
     ];
 
     let cors_layer = CorsLayer::new()
@@ -106,11 +104,11 @@ async fn main() {
 
   
     let addr = SocketAddr::from(([0, 0, 0, 0], 3629));
-    // let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
-    // axum::serve(listener, app).await.unwrap();
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
+    axum::serve(listener, app).await.unwrap();
     
-    axum_server::bind_rustls(addr, tls_config)
-        .serve(app.into_make_service())
-        .await
-        .unwrap();
+    // axum_server::bind_rustls(addr, tls_config)
+    //     .serve(app.into_make_service())
+    //     .await
+    //     .unwrap();
 }
