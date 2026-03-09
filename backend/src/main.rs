@@ -30,6 +30,7 @@ mod state;
 mod crypto;
 mod logging;
 mod admin;
+mod fighters;
 
 use state::{
     AppState
@@ -52,7 +53,7 @@ async fn main() {
     let cert_pem_url = env::var("CERT_PEM_URL").expect("CERT_PEM_URL not set.");
     let key_pem_url = env::var("KEY_PEM_URL").expect("KEY_PEM_URL not set.");
     
-    let tls_config = RustlsConfig::from_pem_file(
+    let _tls_config = RustlsConfig::from_pem_file(
         cert_pem_url,
         key_pem_url,
     )
@@ -90,6 +91,9 @@ async fn main() {
         .route("/", get(admin::hello_admin))
         .layer(middleware::from_fn(admin::auth_admin));
 
+    let fighters_router = Router::new()
+        .route("/", get(fighters::get_fighters));
+
     let users_router = Router::new()
         .route("/", post(user_accounts::create_user).get(user_accounts::find_all_users))
         .route("/{id}", get(user_accounts::find_user))
@@ -98,6 +102,7 @@ async fn main() {
     let app = Router::new()
         .nest("/api/admin", admin)
         .nest("/api/users", users_router)
+        .nest("/api/fighters", fighters_router)
         .with_state(app_state)
         .layer(cors_layer)
         .layer(CookieManagerLayer::new());

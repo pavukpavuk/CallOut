@@ -100,7 +100,7 @@ export function Fighters(){
     const [fighterArrState, setFighterArrState] = useState("");
     
     useEffect(() => {
-        axios.get('/assets/fighters.json', //just for dev
+        axios.get(`${import.meta.env.VITE_API_URL}/api/fighters`, //just for dev
         {
             headers : { 
                 'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ export function Fighters(){
         })
         .then(res => {
             setFighterArr(res.data);
-           setFighterArrState("received")
+            setFighterArrState("received")
         }).catch(() => {
             setFighterArrState("not_received");
         });
@@ -145,7 +145,7 @@ export function Fighters(){
         fightersHTML = <h1>No fighters found.</h1>;
     }
 
-
+    console.log(fighterArr);
     return <>
         {searchForm}
         {fightersHTML}

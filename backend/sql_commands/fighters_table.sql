@@ -12,7 +12,7 @@ CREATE TABLE fighters (
     losses INTEGER DEFAULT 0,
     draws INTEGER DEFAULT 0,
     weight_kg NUMERIC DEFAULT 0,
-    profile_picture_url TEXT DEFAULT 'default.png',
+    picture_url TEXT DEFAULT 'default.png',
     gym_id_fk INTEGER DEFAULT NULL,
 
 
