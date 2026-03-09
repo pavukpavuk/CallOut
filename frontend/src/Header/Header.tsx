@@ -22,6 +22,12 @@ export function Header(){
                               </a>
                         </div>
                   </div>
+
+                  <div id="account-management-container">
+                        <a id="login">Login</a>
+                        <a id="signup">Sign up</a>
+                  </div>
+                        
             </div> 
       </>
 }

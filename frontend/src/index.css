@@ -3,6 +3,7 @@
 } */
 
 
+
 @font-face {
   font-family: krona_one;
   src: url('assets/fonts/krona_one/KronaOne-Regular.ttf');
@@ -32,4 +33,9 @@ body {
   margin: 0;
   width: 100%;
  
+}
+
+a:hover{
+  cursor: pointer;
+  color:red;
 }

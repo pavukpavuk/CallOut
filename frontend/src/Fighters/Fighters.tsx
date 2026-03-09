@@ -109,26 +109,30 @@ export function Fighters(){
         })
         .then(res => {
             setFighterArr(res.data);
-            setFighterArrState("received");
+           setFighterArrState("received")
+        }).catch(() => {
+            setFighterArrState("not_received");
         });
         
     }, []);
 
 
     var searchForm = <>
-
         <div className="fighter-search-form">
-            <div className="text-input-container"><span>Search Fighters:</span><input type="text" name="search-fighters"/></div>
+
+            <div className="text-input-container">
+                <span>Search Fighters:</span>
+                <input type="text" name="search-fighters"/>
+            </div>
+
             <br></br>
+
             <div className="fighter-search-button-container">
                 <button className="fighter-search-button">Search</button>
             </div>
             
         </div>
     </>;
-
-
-
 
     var fightersHTML;
     if(fighterArrState === "received"){
@@ -138,7 +142,7 @@ export function Fighters(){
         
     }
     else{
-        return "Noting";
+        fightersHTML = <h1>No fighters found.</h1>;
     }
 
 
