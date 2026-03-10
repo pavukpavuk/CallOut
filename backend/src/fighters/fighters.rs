@@ -1,29 +1,18 @@
-use axum::{
-    Json
-};
+use axum::Json;
 
-use time::{
-    OffsetDateTime,
-
-};
-use serde::{
-    Serialize,
-};
-
+use serde::Serialize;
+use time::OffsetDateTime;
 
 use futures::StreamExt;
 
-
 use crate::shb_error::BackendError;
 
-
-use std::sync::Arc;
 use crate::AppState;
 use axum::extract::State;
-
+use std::sync::Arc;
 
 #[derive(Serialize, Debug)]
-pub struct FighterRow{
+pub struct FighterRow {
     user_id: i32,
     name: String,
     picture_url: Option<String>,
@@ -34,35 +23,30 @@ pub struct FighterRow{
     draws: i32,
     weight_kg: i32,
     created_at: OffsetDateTime,
-    gym_id_fk: Option<i32>
+    gym_id_fk: Option<i32>,
 }
 
-pub async fn get_fighters(app_state: State<Arc<AppState>>) -> Result< Json<Vec<FighterRow>> , BackendError> {
-
+pub async fn get_fighters(
+    app_state: State<Arc<AppState>>,
+) -> Result<Json<Vec<FighterRow>>, BackendError> {
     let mut fighter_arr = Vec::<FighterRow>::new();
-    let mut query = sqlx::query_file_as!(FighterRow,"src/fighters/sql/get_fighters.sql")
+    let mut query = sqlx::query_file_as!(FighterRow, "src/fighters/sql/get_fighters.sql")
         .fetch(&app_state.db_pool);
 
     while let Some(res) = query.next().await {
-
-        match res{
+        match res {
             Ok(val) => {
                 fighter_arr.push(val);
-            },
-            Err(_) => {
-                
             }
+            Err(_) => {}
         }
-        
     }
     Ok(Json(fighter_arr))
 }
 
+//mock data
 
-//mock data 
-
-
-//     let fighter_arr = vec![ 
+//     let fighter_arr = vec![
 //     FighterRow {
 //     user_id: 1,
 //     weight_kg: 1,

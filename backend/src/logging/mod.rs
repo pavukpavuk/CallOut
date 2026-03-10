@@ -1,5 +1,2 @@
 pub mod logging;
-pub use logging::{
-    log,
-    log_users
-};
+pub use logging::{log, log_users};

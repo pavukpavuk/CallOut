@@ -1,5 +1,3 @@
 pub mod error;
 
-pub use error::{   
-    BackendError
-};
+pub use error::BackendError;
