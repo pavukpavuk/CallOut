@@ -34,7 +34,7 @@ impl IntoResponse for BackendError {
             Self::InternalServerError(msg) => (StatusCode::INTERNAL_SERVER_ERROR, "internal_server_error", msg),
             Self::BadRequest(msg) => (StatusCode::BAD_REQUEST, "bad_request", msg),
             Self::UnprocessableEntity(msg) => (StatusCode::UNPROCESSABLE_ENTITY, "unprocessable_entity", msg),
-            Self::NotAuthorized(msg) => (StatusCode::FORBIDDEN, "not_authorised", msg),
+            Self::NotAuthorized(msg) => (StatusCode::UNAUTHORIZED, "not_authorised", msg),
             Self::_CustomMessage(msg) => (StatusCode::BAD_REQUEST, "bad_request", msg),
         };
 

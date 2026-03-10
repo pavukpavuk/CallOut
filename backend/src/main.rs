@@ -47,6 +47,8 @@ async fn main() {
 
     dotenv().ok();
 
+    
+
     rustls::crypto::ring::default_provider().install_default().expect("Failed to install rustls crypto provider");
     
 
@@ -75,6 +77,8 @@ async fn main() {
     let pool = PgPoolOptions::new()
         .connect(&db_url)  
         .await.unwrap();
+
+    sqlx::migrate!("./migrations").run(&pool).await.unwrap();
 
     let master_key = env::var("MASTER_KEY").expect("master_key not set.");  
 

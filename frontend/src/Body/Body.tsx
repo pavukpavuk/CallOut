@@ -13,7 +13,7 @@ export function Body(){
                 </div>
                 <div id="safe-zone">
                     <Fighters/>
-                    {/* <UserCRUD/> */}
+                    <UserCRUD/>
                 </div>
                 <div id="right-side-content">
                     <Notifications/>
